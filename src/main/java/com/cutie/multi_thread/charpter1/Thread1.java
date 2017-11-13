@@ -1,4 +1,4 @@
-package com.cutie.multi_thread;
+package com.cutie.multi_thread.charpter1;
 
 /**
  * Created by cutie on 2017/11/5.

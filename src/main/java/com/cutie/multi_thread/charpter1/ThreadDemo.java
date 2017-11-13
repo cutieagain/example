@@ -1,4 +1,4 @@
-package com.cutie.multi_thread;
+package com.cutie.multi_thread.charpter1;
 
 
 import java.util.concurrent.Executor;

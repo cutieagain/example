@@ -1,4 +1,4 @@
-package com.cutie.multi_thread.ThreadLoginServlet;
+package com.cutie.multi_thread.charpter1.ThreadLoginServlet;
 
 /**
  * Created by cutie on 2017/11/5.
