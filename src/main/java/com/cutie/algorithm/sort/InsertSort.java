@@ -103,18 +103,18 @@ public class InsertSort {
         for (int i = 0; i < a.length; i++) {
             int temp = a[i];
             int left = 0;
-            int mid = i-1;
+            int mid = i - 1;
             int right = 0;
-            while(left <= right){
-                mid = (left+right)/2;
-                if(a[mid]<temp){
-                    left=mid+1;
-                }else {
-                    right=mid-1;
+            while (left <= right) {
+                mid = (left + right) / 2;
+                if (a[mid] < temp) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
                 }
             }
-            for(int j=i-1; j>=left; j--){
-                a[j+1] = a[j];
+            for (int j = i - 1; j >= left; j--) {
+                a[j + 1] = a[j];
             }
             if (left != i) {
                 a[left] = temp;
