@@ -16,7 +16,9 @@ public class ShellSort {
         int gap = array.length / 2;
         //根据gap分组插入排序,gap为多少就是分为几组
         while (gap > 0) {
+            //i-->组数
             for (int i = 0; i < gap; i++) {
+                //
                 for (int j = i+gap; j <= array.length-gap; j += gap) {
                     for (int k = j-gap; k >= 0 ; k -=gap) {
                         if(array[k+gap] < array[k]){
