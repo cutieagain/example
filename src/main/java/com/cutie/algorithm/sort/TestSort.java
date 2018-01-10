@@ -44,4 +44,18 @@ public class TestSort {
         array[low] = temp;
         return low;
     }
+
+    /*直接插入排序*/
+    private void directInsertSort(){
+
+    }
+
+    /*希尔排序*/
+    /*简单选择排序*/
+    /*堆排序*/
+    /*冒泡排序*/
+    /*快速排序*/
+    /*归并排序*/
+    /*基数排序*/
+
 }
