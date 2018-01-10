@@ -1,14 +1,18 @@
 package com.cutie.algorithm.sort;
 
+import java.util.Arrays;
+
 /**
  * Created by cutie on 2017/12/10.
  */
 public class QuickSort {
     public static void main(String[] args) {
         AlgorithmUtils<Integer> algorithmUtils = new AlgorithmUtils();
-        Integer[] array = new Integer[]{2, 3, 5, 5, 42, 4, 54, 2, 52, 542, 43, 24, 3, 52, 52, 34, 2};
+//        Integer[] array = new Integer[]{2, 3, 5, 5, 42, 4, 54, 2, 52, 542, 43, 24, 3, 52, 52, 34, 2};
+        Integer[] array = new Integer[]{3,5,4,3};
         algorithmUtils.print(array);
-        quick(array);
+        quickSortWrong(array);
+//        quick(array);
         algorithmUtils.print(array);
     }
 
@@ -41,22 +45,52 @@ public class QuickSort {
             while (low < high && a[high] >= temp) {
                 high--;
             }
-            System.out.format("a[low] = a[high]  ---  low:%s,high:%s,a[low]:%s,a[high]:%s", low, high, a[low], a[high]);
-            System.out.println();
             a[low] = a[high];
-            while (low < high && a[low] <= temp) {
+            while (low < high && a[low] < temp) {
                 low++;
             }
-            System.out.format("a[high] = a[low]  ---  low:%s,high:%s,a[high]:%s,a[low]:%s", low, high, a[high], a[low]);
-            System.out.println();
             a[high] = a[low];
         }
         //找到基准元素位置，赋值
-        System.out.format("a[low] = temp;  ---  low:%s,high:%s,a[low]:%s,temp:%s", low, high, a[low], temp);
-        System.out.println();
         a[low] = temp;
+        System.out.println(Arrays.toString(a));
         return low;
     }
 
+
+    /*写错了，但是看不出来是为什么。。。*/
+    private static void quickSortWrong(Integer[] a){
+        if (a.length > 0){
+            sortWrong(a, 0, a.length-1);
+        }
+    }
+
+    private static void sortWrong(Integer[] a, int low , int high){
+        //wrong here  “while (low < high) --> if (low < high)”
+        if (low < high){
+            int middle = getMidWrong(a, low , high);
+            sortWrong(a, 0 , middle-1);
+            sortWrong(a, middle+1 , high);
+        }
+
+    }
+
+    //    Integer[] array = new Integer[]{10,9,8,3,7,6,3,5,4,3,2,1};
+    private static int getMidWrong(Integer[] a, int low, int high) {
+        int temp = a[low];
+        while (low < high){
+            while (low < high && a[high] >= temp){
+                high--;
+            }
+            a[low] = a[high];
+            while (low < high && a[low] <= temp){
+                low++;
+            }
+            a[high] = a[low];
+        }
+        a[low] = temp;
+        System.out.println(Arrays.toString(a));
+        return low;
+    }
 
 }
