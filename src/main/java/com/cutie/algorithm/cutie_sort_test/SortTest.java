@@ -1,16 +1,16 @@
-package com.cutie.algorithm.itcast_sort;
+package com.cutie.algorithm.cutie_sort_test;
 
 import java.util.Arrays;
 
 public class SortTest {
 
 	public static void main(String[] args) {
-		int[] arr = { 2, 5, 3, 1, 4, 1 };
+		int[] arr = { 2, 5, 52, 41, 3, 1, 4, 1, 5, 84 };
 		System.out.println("排序前：" + Arrays.toString(arr));
-		 InsertSort.sort(arr);
-		// BubbleSort.sort(arr);
-		// SelectionSort.sort(arr);
-		// ShellSort.sort(arr);
+//		 InsertSort.sort(arr);
+//		 BubbleSort.sort(arr);
+		 SelectionSort.sort(arr);
+//		 ShellSort.sort(arr);
 //		 QuickSort.sort(arr);
 		// MergeSort.sort(arr);
 		// HeapSort.sort(arr);

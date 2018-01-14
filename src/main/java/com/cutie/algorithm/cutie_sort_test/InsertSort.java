@@ -1,4 +1,4 @@
-package com.cutie.algorithm.itcast_sort;
+package com.cutie.algorithm.cutie_sort_test;
 
 /*
  * 插入排序基本思想
@@ -11,18 +11,14 @@ package com.cutie.algorithm.itcast_sort;
  */
 public class InsertSort {
 	public static void sort(int[] data) {
-		/*for (int i = 1; i < data.length; i++) {
-			for (int j = i; (j > 0) && (data[j] < data[j - 1]); j--) {
-				SortTest.swap(data, j, j - 1);
-			}
-		}*/
-		for(int i = 0; i<data.length-1; i++){
-			for (int j = i+1; j >0 ; j--) {
-				if(data[j] < data[j-1]){
-					SortTest.swap(data, j, j - 1);
+		for (int i = 0; i < data.length-1; i++) {
+			for (int j = i; j>= 0; j--) {
+				if (data[j]>data[j+1]){
+					SortTest.swap(data, j, j+1);
+				} else {
+					break;
 				}
 			}
 		}
-
 	}
 }
