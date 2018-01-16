@@ -1,7 +1,7 @@
 /**
  * Created by cutie on 2017/11/18.
  */
-package com.cutie.design_pattern.Singleton;
+package com.cutie.design_pattern.singleton;
 
 /*
 * http://wuchong.me/blog/2014/08/28/how-to-correctly-write-singleton-pattern/

@@ -1,6 +1,4 @@
-package com.cutie.design_pattern.Singleton;
-
-import com.sun.corba.se.impl.orbutil.concurrent.Sync;
+package com.cutie.design_pattern.singleton;
 
 /**
  * Created by Administrator on 2017/11/2.

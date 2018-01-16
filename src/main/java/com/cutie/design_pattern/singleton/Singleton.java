@@ -1,4 +1,4 @@
-package com.cutie.design_pattern.Singleton;
+package com.cutie.design_pattern.singleton;
 
 /**
  * Created by Administrator on 2017/11/2.

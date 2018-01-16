@@ -1,4 +1,4 @@
-package com.cutie.design_pattern.Singleton;
+package com.cutie.design_pattern.singleton;
 
 /**
  * Created by cutie on 2017/11/4.
