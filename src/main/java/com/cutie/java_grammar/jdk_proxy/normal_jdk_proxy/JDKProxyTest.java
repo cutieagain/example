@@ -1,4 +1,4 @@
-package com.cutie.java_grammar.jdk_proxy;
+package com.cutie.java_grammar.jdk_proxy.normal_jdk_proxy;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationHandler;
