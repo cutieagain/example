@@ -1,4 +1,4 @@
-package com.cutie.concurrency_share;
+package com.cutie.share.concurrency_share;
 
 import java.util.ArrayList;
 import java.util.List;

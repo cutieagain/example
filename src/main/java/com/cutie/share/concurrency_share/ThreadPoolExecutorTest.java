@@ -1,6 +1,5 @@
-package com.cutie.concurrency_share;
+package com.cutie.share.concurrency_share;
 
-import java.util.Date;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;

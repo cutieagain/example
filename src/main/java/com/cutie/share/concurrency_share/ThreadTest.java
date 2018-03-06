@@ -1,4 +1,4 @@
-package com.cutie.concurrency_share;
+package com.cutie.share.concurrency_share;
 
 /**
  * Created by cutie on 2018/2/9.

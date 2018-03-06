@@ -1,6 +1,5 @@
-package com.cutie.concurrency_share;
+package com.cutie.share.concurrency_share;
 
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;

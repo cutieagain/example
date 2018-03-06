@@ -1,4 +1,4 @@
-package com.cutie.concurrency_share;
+package com.cutie.share.concurrency_share;
 
 /**
  * Created by Administrator on 2017/11/2.
