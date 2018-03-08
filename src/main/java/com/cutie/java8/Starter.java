@@ -1,7 +1,5 @@
 package com.cutie.java8;
 
-import org.apache.tools.ant.util.DateUtils;
-
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
@@ -15,8 +13,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.*;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Supplier;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -37,6 +35,7 @@ public class Starter {
         System.out.println(defaulable.notRequired());
     }
 
+    //2.1 Lambda表达式与Functional接口
     public static void doSomeTest() {
         Arrays.asList("a", "b", "c").forEach(e -> System.out.println(e));
         Arrays.asList("a", "b", "c").forEach((String e) -> System.out.println(e));
@@ -66,6 +65,7 @@ public class Starter {
         }
     }
 
+    //2.2 接口的默认方法与静态方法
     //可以重写 default 方法
     private interface Defaulable {
         default String notRequired() {
@@ -388,8 +388,34 @@ public class Starter {
     //4.6 并行（parallel）数组
     //Java 8增加了大量的新方法来对数组进行并行处理。可以说，最重要的是parallelSort()方法，因为它可以在多核机器上极大提高数组排序的速度
     public static class ForParallel{
+        public static void main(String[] args) {
+            long[] arrayOfLong = new long [ 20000 ];
 
+            System.out.println("size:"+arrayOfLong.length+",arrayOfLong[19999]"+ arrayOfLong[19999]);
+            Arrays.parallelSetAll( arrayOfLong, index -> ThreadLocalRandom.current().nextInt(100000));
+            System.out.println("size:"+arrayOfLong.length+",arrayOfLong[19999]"+ arrayOfLong[19999]);
+            Arrays.stream(arrayOfLong).limit(20).forEach(i -> System.out.print(i + " "));
+            System.out.println();
+            Arrays.parallelSort(arrayOfLong);
+            Arrays.stream(arrayOfLong).limit(20).forEach(i -> System.out.print(i + " "));
+            System.out.println();
+        }
     }
+
+    //5. 新的Java工具
+
+    //Java 8也带来了一些新的命令行工具。在这节里我们将会介绍它们中最有趣的部分。
+    //5.1 Nashorn引擎: jjs
+
+    //jjs是个基于Nashorn引擎的命令行工具。它接受一些JavaScript源代码为参数，并且执行这些源代码
+
+    //5.2 类依赖分析器jdeps
+    //jdeps是一个很有用的命令行工具。它可以显示Java类的包级别或类级别的依赖。它接受一个.class文件，一个目录，或者一个jar文件作为输入。jdeps默认把结果输出到系统输出（控制台）上。
+    //下面我们查看现阶段较流行的Spring框架类库的依赖报告，为了简化这个例子，我们只分析一个jar文件：org.springframework.core-3.0.5.RELEASE.jar
+    //jdeps org.springframework.core-3.0.5.RELEASE.jar
+
+    //6. Java虚拟机（JVM）的新特性
+    //PermGen空间被移除了，取而代之的是Metaspace（JEP 122）。JVM选项-XX:PermSize与-XX:MaxPermSize分别被-XX:MetaSpaceSize与-XX:MaxMetaspaceSize所代替。
 
 }
 
