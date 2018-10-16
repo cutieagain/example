@@ -359,6 +359,8 @@ public class Starter {
             final Duration duration = Duration.between(from, to);
             System.out.println("Duration in days: " + duration.toDays());
             System.out.println("Duration in hours: " + duration.toHours());
+
+            System.out.println("new Date();" + new Date());
         }
     }
 
