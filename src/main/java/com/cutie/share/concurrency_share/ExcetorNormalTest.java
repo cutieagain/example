@@ -29,7 +29,7 @@ SingleThreadExecutor()
 -单例线程，任意时间池中只能有一个线程
 -用的是和cache池和fixed池相同的底层池，但线程数目是1-1,0秒IDLE（无IDLE）
 
-ForkJoinPool
+J7 ForkJoinPool:如何使用 ForkJoinPool 以及原理 http://blog.dyngr.com/blog/2016/09/15/java-forkjoinpool-internals/
 
 * */
 /**
