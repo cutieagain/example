@@ -1,4 +1,4 @@
-package com.cutie.leetcode;
+package com.cutie.leetcode.arrays_linkedlist;
 
 /**
  * Created by cutie on 2018/11/1.
@@ -25,13 +25,22 @@ public class _24_swap_node_in_pairs {
     public static class ListNode {
         int val;
         ListNode next;
-
         ListNode(int x) {
             val = x;
         }
     }
 
-    static class Solution {
+    private static class Solution {
+        //2 - 1  1 - 3
+        public ListNode swapPairs(ListNode head) {
+            ListNode preNode = new ListNode(0);//1
+            preNode.next = head;
+            while(preNode.next != null && preNode.next.next != null){
+
+            }
+            return null;
+        }
+
         public ListNode swapPairs1(ListNode head) {
             ListNode dmy = new ListNode(0);
             ListNode preNode = dmy;
@@ -52,7 +61,7 @@ public class _24_swap_node_in_pairs {
         }
 
         public ListNode swapPairs2(ListNode head) {
-            if (head == null || head.next == null){
+            if (head == null || head.next == null) {
                 return head;
             }
             ListNode suc = head.next;//2
@@ -61,8 +70,8 @@ public class _24_swap_node_in_pairs {
             return suc;
         }
 
-        public ListNode swapPairs(ListNode head) {
-            if (head == null || head.next == null){
+        public ListNode swapPairs3(ListNode head) {
+            if (head == null || head.next == null) {
                 return head;
             }
             ListNode cur = head;
@@ -82,25 +91,34 @@ public class _24_swap_node_in_pairs {
     }
 
     public static void main(String[] args) {
-        ListNode listNode1 = new ListNode(1);
-        ListNode listNode2 = new ListNode(2);
-        ListNode listNode3 = new ListNode(3);
-        ListNode listNode4 = new ListNode(4);
-        listNode1.next = listNode2;
-        listNode2.next = listNode3;
-        listNode3.next = listNode4;
-
-        outPut(listNode1);
-        ListNode result = new Solution().swapPairs(listNode1);
+        ListNode headNode = getInitNodeList();
+        outPut(headNode);
+        ListNode result = new Solution().swapPairs(headNode);
         outPut(result);
     }
 
+    //获取初始的节点
+    public static ListNode getInitNodeList(){
+        ListNode listNode1 = null, listNode2 = null, headNode = null;
+        for (int i = 1; i <= 6; i++) {
+            if (i == 1) {
+                listNode1 = new ListNode(i);//第一次需要新建
+                headNode = listNode1;
+            } else {
+                listNode1 = listNode1.next;//之后都是
+            }
+            listNode2 = new ListNode(i + 1);
+            listNode1.next = listNode2;
+        }
+        return headNode;
+    }
+
     //输出
-    private static void outPut(ListNode tempNode){
-        while (tempNode != null){
-            if (tempNode.next != null){
-                System.out.print(tempNode.val + "->" );
-            }else{
+    public static void outPut(ListNode tempNode) {
+        while (tempNode != null) {
+            if (tempNode.next != null) {
+                System.out.print(tempNode.val + "->");
+            } else {
                 System.out.print(tempNode.val);
             }
             tempNode = tempNode.next;
